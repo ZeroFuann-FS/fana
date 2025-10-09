@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FANA - Carreteras</title>
+  <link rel="stylesheet" href="css/carreteras.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/Logo_Fana.png" alt="Logo FANA">
+      <h1>FANA</h1>
+      <p>Ingeniería & Carreteras</p>
+    </div>
+
+    <nav>
+      <div class="hamburger" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="carreteras.html" class="selected">Carretera</a></li>
+        <li><a href="drenajes-longitudinal.html">Drenajes Longitudinal</a></li>
+        <li><a href="drenajes-transversal.html">Drenaje Transversal</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="politicas.html">Políticas de Privacidad</a></li>
+      </ul>
+    </nav>
+
+    <div class="social">
+      <a href="https://wa.me/520000000000"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:contacto@ejemplo.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </header>
+
+  <section class="carreteras-section">
+    <div class="container">
+      <h2 class="carreteras-title">CARRETERAS</h2>
+
+      <!-- Carrusel de imágenes -->
+      <section class="image-carousel">
+        <article class="carousel-container">
+          <input type="radio" name="slides" id="slide-1" checked>
+          <input type="radio" name="slides" id="slide-2">
+          <input type="radio" name="slides" id="slide-3">
+          <input type="radio" name="slides" id="slide-4">
+
+          <ul class="slides">
+            <li class="slide">
+              <img src="img/Carrusel1.jpg" alt="Proyecto 1">
+            </li>
+            <li class="slide">
+              <img src="img/Carrusel2.jpg" alt="Proyecto 2">
+            </li>
+            <li class="slide">
+              <img src="img/Carreteras/A_1.jpg" alt="Proyecto 3">
+            </li>
+            <li class="slide">
+              <img src="img/Carreteras/C_2.jpg" alt="Proyecto 4">
+            </li>
+          </ul>
+
+          <aside class="slides-nav">
+            <label for="slide-1" id="dot-1"></label>
+            <label for="slide-2" id="dot-2"></label>
+            <label for="slide-3" id="dot-3"></label>
+            <label for="slide-4" id="dot-4"></label>
+          </aside>
+        </article>
+      </section>
+
+      <div class="classification-card">
+        <p>
+          En ese sentido, la SCT otorga una clasificación oficial a los caminos. Esto se convierte en un valioso instrumento legal que dicta las pautas para la circulación de los vehículos de carga. Asimismo, se tipifican los caminos en cinco categorías, iniciando con “ET” y “A”, cuyas prestaciones físicas y características geométricas permiten la circulación de cualquier tipo de vehículo.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" id="card-et-a">
+          <h3>Tipo de camino: ET – A</h3>
+        </div>
+        <div class="service-card" id="card-b">
+          <h3>Tipo de camino B</h3>
+        </div>
+        <div class="service-card" id="card-c">
+          <h3>Tipo de camino C</h3>
+        </div>
+        <div class="service-card" id="card-d">
+          <h3>Tipo de camino D</h3>
+        </div>
+      </div>
+
+      <section class="nomenclatura-section">
+        <div class="nomenclatura-card" id="nomenclatura-card">
+          <h3>Tipo de carretera y nomenclatura</h3>
+          <p>Haz clic para ver la nomenclatura completa.</p>
+        </div>
+      </section>
+
+
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="nomenclatura-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Tipo de carretera y nomenclatura</h2>
+
+      <h3>ET</h3>
+      <div class="nomenclatura-grid">
+        <div class="nomenclatura-item">Carretera de cuatro carriles, Eje de Transporte- ET4</div>
+        <div class="nomenclatura-item">Carretera de dos carriles, Eje de Transporte- ET2</div>
+      </div>
+
+      <h3>A</h3>
+      <div class="nomenclatura-grid">
+        <div class="nomenclatura-item">Carretera de cuatro carriles- A4</div>
+        <div class="nomenclatura-item">Carretera de dos carriles- A2</div>
+      </div>
+
+      <h3>B</h3>
+      <div class="nomenclatura-grid">
+        <div class="nomenclatura-item">Carretera de cuatro carriles, red primaria- B4</div>
+        <div class="nomenclatura-item">Carretera de dos carriles, red primaria- B2</div>
+      </div>
+
+      <h3>C</h3>
+      <div class="nomenclatura-grid">
+        <div class="nomenclatura-item">Carretera de dos carriles, red secundaria- C</div>
+      </div>
+
+      <h3>D</h3>
+      <div class="nomenclatura-grid">
+        <div class="nomenclatura-item">Carretera de dos carriles, red alimentadora- D</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 FANA. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/acerca.js"></script>
+  <script>
+    // Modal functionality for nomenclatura
+    var nomenclaturaModal = document.getElementById("nomenclatura-modal");
+    var nomenclaturaCard = document.getElementById("nomenclatura-card");
+    var nomenclaturaClose = document.getElementsByClassName("close")[0];
+
+    nomenclaturaCard.onclick = function() {
+      nomenclaturaModal.style.display = "block";
+    }
+
+    nomenclaturaClose.onclick = function() {
+      nomenclaturaModal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == nomenclaturaModal) {
+        nomenclaturaModal.style.display = "none";
+      }
+    }
+
+    // Modal functionality for service cards
+    var serviceCards = document.querySelectorAll('.service-card');
+    var serviceModal = null;
+    var descriptions = [
+      "Sus características geométricas y estructurales permiten la operación de todos los vehículos autorizados con las máximas dimensiones, capacidad y peso.",
+      "Abraca la red primaria (aquellas que prestan un servicio de comunicación interestatal, además de vincular el tránsito).",
+      "Incluye la red secundaria, es decir carreteras dentro del ámbito estatal con longitudes medias, estableciendo conexiones con la red primaria.",
+      "Red alimentadora, prestan servicio dentro del ámbito municipal con longitudes relativamente cortas, la cual genera conexiones con la red secundaria."
+    ];
+
+    serviceCards.forEach(function(card, index) {
+      card.addEventListener('click', function() {
+        // Create modal dynamically
+        if (serviceModal) {
+          serviceModal.remove();
+        }
+        var images = [];
+        var alts = [];
+        if (index === 0) { // ET - A
+          images = ['img/Carreteras/ET-A_1.jpg', 'img/Carreteras/ET-A_2.jpg', 'img/Carreteras/ET-3.jpg', 'img/Carreteras/A_1.jpg', 'img/Carreteras/A_2.jpg'];
+          alts = ['ET-A 1', 'ET-A 2', 'ET 3', 'A 1', 'A 2'];
+        } else if (index === 1) { // B
+          images = ['img/Carreteras/B_1.jpg', 'img/Carreteras/B_2.jpg'];
+          alts = ['B 1', 'B 2'];
+        } else if (index === 2) { // C
+          images = ['img/Carreteras/C_1.jpg', 'img/Carreteras/C_2.jpg'];
+          alts = ['C 1', 'C 2'];
+        } else if (index === 3) { // D
+          images = ['img/Carreteras/D.jpg'];
+          alts = ['D'];
+        }
+        let inputs = '';
+        let slides = '';
+        let nav = '';
+        images.forEach((img, i) => {
+          inputs += `<input type="radio" name="modal-slides-${index}" id="modal-slide-${i+1}-${index}" ${i === 0 ? 'checked' : ''}>`;
+          slides += `<li class="slide"><img src="${img}" alt="${alts[i]}"></li>`;
+          nav += `<label for="modal-slide-${i+1}-${index}"></label>`;
+        });
+        serviceModal = document.createElement('div');
+        serviceModal.classList.add('modal');
+        serviceModal.innerHTML = `
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>${card.querySelector('h3').textContent}</h2>
+            <p>${descriptions[index]}</p>
+            <section class="image-carousel">
+              <article class="carousel-container carousel-${images.length}">
+                ${inputs}
+                <ul class="slides">
+                  ${slides}
+                </ul>
+                <aside class="slides-nav">
+                  ${nav}
+                </aside>
+              </article>
+            </section>
+          </div>
+        `;
+        document.body.appendChild(serviceModal);
+
+        var closeBtn = serviceModal.querySelector('.close');
+        closeBtn.onclick = function() {
+          serviceModal.style.display = 'none';
+          serviceModal.remove();
+          serviceModal = null;
+        };
+
+        serviceModal.style.display = 'block';
+
+        window.onclick = function(event) {
+          if (event.target == serviceModal) {
+            serviceModal.style.display = 'none';
+            serviceModal.remove();
+            serviceModal = null;
+          }
+        };
+      });
+    });
+  </script>
+</body>
+</html>

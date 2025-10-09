@@ -1,0 +1,448 @@
+:root {
+--primario: #000000;
+--secundario: #1e1e1e;
+--acento: #FFFFFF;
+--fondo2: #f4f4f4;
+--fondo: #FFFFFF;
+--texto: #333333;
+--oscuro: #1e1e1e;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Segoe UI', sans-serif;
+background-color: var(--fondo);
+color: var(--texto);
+line-height: 1.6;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+/* --- HEADER AND NAVIGATION (Estilos del menú que pediste mantener) --- */
+
+header {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+background-color: var(--fondo);
+padding: 1rem 2rem;
+border-bottom: 1px solid var(--secundario);
+}
+
+.logo img {
+height: 60px;
+}
+
+.logo h1 {
+font-size: 1.5rem;
+color: var(--primario);
+}
+
+.logo p {
+font-size: 0.9rem;
+color: var(--secundario);
+}
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 1.5rem;
+}
+
+nav a {
+text-decoration: none;
+color: var(--secundario);
+font-weight: 500;
+transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover, nav a.selected {
+color: var(--primario);
+border-bottom: 2px solid var(--primario);
+}
+
+.hamburger {
+display: none;
+font-size: 2rem;
+color: var(--secundario);
+cursor: pointer;
+position: absolute;
+right: 20px;
+top: 20px;
+}
+
+.social a {
+margin-left: 1rem;
+color: var(--secundario);
+font-size: 1.2rem;
+transition: color 0.3s;
+}
+
+.social a:hover {
+color: var(--primario);
+}
+
+/* --- DRENAJES SECTION & HERO LAYOUT (Corrección de distribución) --- */
+
+.drenajes-section {
+padding: 50px 0;
+}
+
+.drenajes-section h2 {
+text-align: center;
+margin-bottom: 30px;
+font-size: 2.5rem;
+color: var(--primario);
+}
+
+.intro-text {
+text-align: center;
+margin-bottom: 50px;
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.hero-section {
+margin-bottom: 40px;
+}
+
+.hero-content {
+display: flex;
+justify-content: center;
+gap: 60px;
+align-items: flex-start;
+flex-wrap: wrap;
+max-width: 1000px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.hero-left {
+flex: 1 1 100%;
+display: flex;
+flex-direction: column;
+gap: 40px; 
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.info-group {
+display: flex;
+flex-direction: row;
+gap: 40px;
+align-items: flex-start;
+}
+
+.definition-text {
+width: 65%;
+margin: 0;
+text-align: justify;
+}
+
+.info-image {
+width: 35%;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.types-list-container {
+width: 65%;
+}
+
+.types-heading {
+margin-bottom: 15px;
+text-align: justify;
+font-weight: 600;
+font-size: 1.1em;
+}
+
+.types-list {
+list-style-type: disc;
+padding-left: 25px;
+margin: 0;
+font-size: 1em;
+line-height: 1.5;
+}
+
+/* --- CARDS CONTAINER (3 columns) --- */
+
+.cards-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+justify-content: center;
+margin-top: 20px;
+margin-bottom: 40px;
+}
+
+.main-cards {
+display: grid;
+grid-template-columns: repeat(3, 1fr); 
+gap: 40px;
+margin: 20px 0 30px 0;
+}
+
+.card {
+background: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 30px 25px;
+width: auto;
+min-height: 140px;
+text-align: center;
+transition: transform 0.3s;
+cursor: pointer;
+}
+
+.card:hover {
+transform: translateY(-5px);
+}
+
+.card h3 {
+margin-bottom: 10px;
+}
+
+
+/* --- MODALS STYLES --- */
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 6% auto;
+padding: 25px;
+border: 1px solid #888;
+width: 75%;
+max-width: 750px;
+max-height: 80%;
+overflow-y: auto;
+border-radius: 10px;
+text-align: justify;
+}
+
+.modal-content h3 {
+margin-top: 20px;
+margin-bottom: 10px;
+text-align: center;
+}
+
+.modal-content h4 {
+margin-top: 20px;
+margin-bottom: 8px;
+text-align: left;
+}
+
+.modal-content p {
+margin-bottom: 15px;
+}
+
+.modal-section-group {
+margin-bottom: 30px;
+}
+
+.modal-image {
+width: 100%;
+max-width: 500px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+display: block;
+margin: 10px auto 20px;
+}
+
+.text-justify {
+text-align: justify;
+}
+
+.coords {
+margin-bottom: 20px;
+}
+
+.mt-30 {
+margin-top: 30px;
+}
+
+.close {
+color: #aaa;
+float: right;
+font-size: 24px;
+font-weight: bold;
+}
+
+.close:hover, .close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+.collage {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
+}
+
+.collage img {
+width: 150px;
+height: 100px;
+object-fit: cover;
+border-radius: 5px;
+}
+
+.modal-nav {
+display: none;
+justify-content: space-between;
+margin-top: 30px;
+padding-top: 20px;
+border-top: 1px solid #ddd;
+}
+
+/* --- FOOTER --- */
+
+footer {
+text-align: center;
+padding: 2rem;
+background-color: var(--secundario);
+color: white;
+margin-top: 3rem;
+font-size: 1rem;
+font-weight: 500;
+letter-spacing: 0.05em;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+@media (max-width: 768px) {
+/* Header and Nav */
+nav ul {
+display: flex;
+flex-direction: column;
+background-color: var(--fondo);
+position: fixed;
+top: 0;
+right: -250px;
+height: 100%;
+width: 250px;
+padding: 2rem;
+box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+transition: right 0.3s ease;
+z-index: 1000;
+}
+
+nav ul.show {
+right: 0;
+}
+
+.hamburger {
+display: block;
+z-index: 1001;
+}
+
+header {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.logo {
+margin-bottom: 1rem;
+}
+
+.social {
+display: flex;
+justify-content: flex-end;
+width: 100%;
+margin-top: 1rem;
+padding-right: 1rem;
+}
+
+/* Hero Content (Móvil) */
+.hero-content {
+flex-direction: column;
+align-items: center;
+gap: 40px;
+max-width: 90%;
+}
+
+.hero-left {
+width: 100%;
+max-width: 100%;
+padding-right: 0;
+}
+
+.info-group {
+flex-direction: column !important;
+gap: 20px !important;
+}
+
+.reverse-group {
+flex-direction: column-reverse !important;
+}
+
+.info-group p.intro-text,
+.info-group img,
+.types-list-container {
+width: 100% !important;
+}
+
+.main-cards {
+grid-template-columns: 1fr;
+gap: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.card {
+width: 100%;
+max-width: 350px;
+margin: 0 auto;
+}
+
+/* Modals (Móvil) */
+.modal-content {
+width: 90%;
+max-height: 90%;
+margin: 5% auto;
+padding: 10px;
+}
+
+.collage img {
+width: 100px;
+height: 70px;
+}
+
+.modal-content h3, .modal-content h4 {
+text-align: center;
+}
+}
+
+@media (max-width: 480px) {
+.drenajes-section h2 {
+font-size: 1.8rem;
+}
+
+.card {
+max-width: 100%;
+}
+
+.collage img {
+width: 100%;
+height: auto;
+}
+}

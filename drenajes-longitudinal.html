@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FANA - Drenajes Longitudinal</title>
+  <link rel="stylesheet" href="css/drenajes-longitudinal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .drenajes-section { padding: 50px 0; }
+    .drenajes-section h2 { text-align: center; margin-bottom: 30px; }
+    .intro-text { text-align: center; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .card { background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 300px; text-align: center; transition: transform 0.3s; cursor: pointer; }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { margin-bottom: 10px; }
+    .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4); }
+    .modal-content { background-color: #fefefe; margin: 6% auto; padding: 25px; border: 1px solid #888; width: 75%; max-width: 750px; max-height: 80%; overflow-y: auto; border-radius: 10px; text-align: justify; }
+
+    /* Navigation buttons between modals */
+    .modal-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+    .modal-nav button {
+      background-color: #6c757d;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .modal-nav button:hover {
+      background-color: #5a6268;
+      transform: translateY(-1px);
+    }
+    .modal-nav button:active {
+      transform: translateY(0);
+    }
+    .close { color: #aaa; float: right; font-size: 24px; font-weight: bold; }
+    .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
+    .collage { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .collage img { width: 150px; height: 100px; object-fit: cover; border-radius: 5px; }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 90%;
+        max-height: 80%;
+        margin: 5% auto;
+        padding: 10px;
+      }
+      .card {
+        width: 90%;
+        margin: 10px auto;
+      }
+      .collage img {
+        width: 100px;
+        height: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/Logo_Fana.png" alt="Logo FANA">
+      <h1>FANA</h1>
+      <p>Ingeniería & Carreteras</p>
+    </div>
+
+    <nav>
+      <div class="hamburger" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="carreteras.html">Carretera</a></li>
+        <li><a href="drenajes-longitudinal.html" class="selected">Drenajes Longitudinal</a></li>
+        <li><a href="drenajes-transversal.html">Drenaje Transversal</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="politicas.html">Políticas de Privacidad</a></li>
+      </ul>
+    </nav>
+
+    <div class="social">
+      <a href="https://wa.me/520000000000"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:contacto@ejemplo.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </header>
+
+  <section class="drenajes-section">
+    <div class="container">
+      <section class="hero-section">
+        <h2>Drenajes Longitudinal</h2>
+        <div class="hero-content">
+          <div class="hero-left" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <p class="intro-text" style="max-width: 600px;">
+              El drenaje longitudinal es un sistema fundamental que se extiende a lo largo de la carretera, diseñado para canalizar eficientemente el agua y proteger la estructura del pavimento de posibles daños causados por la acumulación de humedad. Este sistema contribuye a la durabilidad y seguridad de la vía, facilitando el correcto escurrimiento del agua. Los tipos más comunes de drenaje longitudinal incluyen:
+            </p>
+            <div class="cards-container" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, auto); gap: 30px 40px; justify-content: center; margin-top: 30px; margin-bottom: 30px;">
+              <div class="card" id="cuneta-card">
+                <h3>Cuneta</h3>
+                <p>Elemento principal en sistemas de drenaje.</p>
+              </div>
+              <div class="card" id="contracuneta-card">
+                <h3>Contracuneta</h3>
+                <p>Complemento de la cuneta.</p>
+              </div>
+              <div class="card" id="zanja-card">
+                <h3>Zanja</h3>
+                <p>Canal para drenaje.</p>
+              </div>
+              <div class="card" id="bordillo-card">
+                <h3>Bordillo</h3>
+                <p>Elemento de contención.</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-right" style="display: flex; flex-direction: column; gap: 20px;">
+            <img src="img/Drenaje Longitudinal/Drenaje3.jpg" alt="Drenaje 3" class="small-image">
+            <img src="img/Drenaje Longitudinal/Drenaje4.jpg" alt="Drenaje 4" class="small-image">
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="cuneta-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="cuneta-modal">&times;</span>
+      <h2 class="modal-title">CUNETA</h2>
+
+      <p>Las cunetas son canales abiertos tan largos como se requieran en el proyecto, con una pendiente suave, que no exceda el 6.7 % construidos por el ser humano (artificiales), donde el agua corre a superficie libre, aunque los puede haber naturales de forma irregular que eventualmente son utilizados cuando conducen pequeños arroyos, se utilizan como elementos principales en sistemas de drenaje de aguas generados por precipitaciones.</p>
+
+      <img src="img/Drenaje Longitudinal/Cuneta/Cuneta.jpg" alt="Imagen de Cuneta" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+
+      <div class="cards-container">
+        <div class="card" id="calculo-card">
+          <h3>Calculo</h3>
+        </div>
+        <div class="card" id="diseno-card">
+          <h3>Diseño</h3>
+        </div>
+        <div class="card" id="ubicacion-card">
+          <h3>Ubicacion</h3>
+        </div>
+        <div class="card" id="tipos-cuneta-card">
+          <h3>Tipos de Cuneta</h3>
+        </div>
+        <div class="card" id="desague-card">
+          <h3>Desagüe de las Cunetas</h3>
+        </div>
+        <div class="card" id="revestimiento-card">
+          <h3>Revestimiento de Cunetas: Prevención de Erosión</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="calculo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="calculo-modal">&times;</span>
+      <h2>Calculo</h2>
+      <p>Estas características señalan:</p>
+      <p>y= Tirante hidráulico.</p>
+      <p>P = Perímetro mojado.</p>
+      <p>b= Base de la cuneta.</p>
+      <p>El color azul en sus distintas tonalidades señala el volumen o área transversal que determina la superficie de la cuneta denominada.</p>
+      <img src="img/Drenaje Longitudinal/Cuneta/Calculo.jpg" alt="Imagen Calculo" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+    </div>
+  </div>
+
+  <div id="diseno-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="diseno-modal">&times;</span>
+      <h2>Diseño</h2>
+      <p>Para el diseño y cálculo de estos elementos se aborda como inicio del análisis, las propiedades geométricas de las formas transversales más comunes como se muestra en la figura siguiente.</p>
+      <img src="img/Drenaje Longitudinal/Cuneta/Diseño.jpg" alt="Imagen Diseño" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+    </div>
+  </div>
+
+  <div id="ubicacion-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="ubicacion-modal">&times;</span>
+      <h2>Ubicacion</h2>
+      <p>Ubicación:</p>
+      <p>Carretera: Carretera EC Cristóbal de Hidalgo.</p>
+      <p>Municipio: 93900 Yecuatla,Ver, México.</p>
+      <p>Calle: Ejido 24 de Marzo.</p>
+      <p>Coordenadas: 19.88404° N, 96.79562° O</p>
+      <div class="collage">
+        <img src="img/Drenaje Longitudinal/Cuneta/Ubicacion1.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Cuneta/Ubicacion2.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Cuneta/Ubicacion3.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Cuneta/Ubicacion4.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Cuneta/Ubicacion5.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Cuneta/Ubicacion6.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div id="tipos-cuneta-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="tipos-cuneta-modal">&times;</span>
+      <h2>Tipos de Cuneta</h2>
+      <p style="margin-bottom: 15px;">De acuerdo a la Norma  5-2-IC " Drenaje Superficial" define 4 tipos de cunetas:</p>
+      <ul style="margin-bottom: 20px;">
+        <li>Cuneta de seguridad.</li>
+        <li>Cuneta triangular.</li>
+        <li>Cuneta trapecial.</li>
+        <li>Cuneta reducida.</li>
+      </ul>
+      <h3 style="margin-top: 20px; margin-bottom: 10px;">Tipos de Cunetas y Materiales de Construcción</h3>
+      <p style="margin-bottom: 15px;">Existen diversos tipos de cunetas según su forma y materiales de construcción:</p>
+      <h4 style="margin-bottom: 10px;">Forma de la sección transversal:</h4>
+      <ul style="margin-bottom: 20px;">
+        <li>Triangulares: Preferidas por su eficiencia hidráulica y estabilidad.</li>
+        <li>Trapezoidales: Utilizadas en terrenos con mayor necesidad de conducción de agua.</li>
+        <li>Rectangulares: Empleadas en zonas urbanas o donde se requiere mayor capacidad de drenaje.</li>
+      </ul>
+      <h4 style="margin-bottom: 10px;">Materiales de Construcción:</h4>
+      <ul style="margin-bottom: 20px;">
+        <li>Concreto vaciado en sitio: Mayor durabilidad y resistencia a la erosión.</li>
+        <li>Concreto prefabricado: Fácil instalación y calidad uniforme.</li>
+        <li>Mampostería de piedra: Requiere verificación de velocidades de flujo.</li>
+        <li>Geomembrana bituminosa: Alternativa para evitar filtraciones y mejorar la impermeabilidad del sistema de drenaje.</li>
+      </ul>
+      <img src="img/Drenaje Longitudinal/Cuneta/Tipo1.jpg" alt="Imagen Tipos de Cuneta" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+    </div>
+  </div>
+
+  <div id="desague-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="desague-modal">&times;</span>
+      <h2>Desagüe de las Cunetas</h2>
+      <p>La descarga de agua de las cunetas se efectuará por medio de alcantarillas de alivio. En región seca o poca lluviosa la longitud de las cunetas será de 250m como máximo, las longitudes de recorridos mayores deberán justificarse técnicamente; en región muy lluviosa se recomienda reducir esta longitud máxima a 200m.</p>
+      <img src="img/Drenaje Longitudinal/Cuneta/Desague.jpg" alt="Imagen Desagüe" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+    </div>
+  </div>
+
+  <div id="revestimiento-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="revestimiento-modal">&times;</span>
+      <h2>Revestimiento de Cunetas: Prevención de Erosión</h2>
+      <p>Para evitar la erosión del suelo y filtraciones que deterioren el pavimento, es recomendable revestir las cunetas con materiales resistentes. Según las condiciones del terreno y la velocidad del flujo, el revestimiento puede ser:</p>
+      <ul>
+        <li>Concreto de resistencia f’c = 175 kg/cm² y espesor de 0.075m.</li>
+        <li>Mampostería de piedra, previa verificación de la velocidad del agua.</li>
+      </ul>
+      <img src="img/Drenaje Longitudinal/Cuneta/RevestimientodeCunetas.jpg" alt="Imagen Revestimiento" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+    </div>
+  </div>
+
+  <div id="contracuneta-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="contracuneta-modal">&times;</span>
+      <h2 class="modal-title">CONTRACUNETA</h2>
+
+      <p>Las contracunetas son zanjas o bordos que se construyen en las laderas, localizadas aguas arriba de los taludes de los cortes en las carreteras. Su principal función es interceptar el agua que escurre sobre la superficie del terreno natural y conducirla hacia una cañada o parte baja del terreno.</p>
+
+      <img src="img/Drenaje Longitudinal/Contracuneta/Definicion.jpg" alt="Imagen de Contracuneta" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+
+      <div class="cards-container">
+        <div class="card" id="diseno-contracuneta-card">
+          <h3>Diseño</h3>
+        </div>
+        <div class="card" id="ubicacion-contracuneta-card">
+          <h3>Ubicación</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="diseno-contracuneta-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="diseno-contracuneta-modal">&times;</span>
+      <h2>Diseño</h2>
+      <p>El tipo de recubrimiento, su espesor, la resistencia del concreto hidráulico o la proporción del suelo-cemento, serán los que establezcan el proyecto o la secretaria.</p>
+    </div>
+  </div>
+
+  <div id="ubicacion-contracuneta-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="ubicacion-contracuneta-modal">&times;</span>
+      <h2>Ubicación</h2>
+      <p>Carretera: Carretera EC Cristóbal de Hidalgo.</p>
+      <p>Municipio: 93900 Yecuatla,Ver, México.</p>
+      <p>Calle: Ejido 24 de Marzo.</p>
+      <p>Coordenadas: 19.88404° N, 96.79562° O</p>
+      <div class="collage">
+        <img src="img/Drenaje Longitudinal/Contracuneta/Ubicacion1.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Contracuneta/Ubicacion2.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Contracuneta/Ubicacion3.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Contracuneta/Ubicacion4.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div id="zanja-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="zanja-modal">&times;</span>
+      <h2 class="modal-title">ZANJA</h2>
+
+      <p>Una zanja es una excavación larga y estrecha en el suelo que se utiliza para diferentes propósitos en la construcción, como, por ejemplo, para instalar tuberías, cables y otros servicios subterráneos.</p>
+
+      <img src="img/Drenaje Longitudinal/Zanja/Definicion.jpg" alt="Imagen de Zanja" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+
+      <div class="cards-container">
+        <div class="card" id="diseno-zanja-card">
+          <h3>Diseño</h3>
+        </div>
+        <div class="card" id="caracteristicas-zanja-card">
+          <h3>Características</h3>
+        </div>
+        <div class="card" id="ubicacion-zanja-card">
+          <h3>Ubicación</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="diseno-zanja-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="diseno-zanja-modal">&times;</span>
+      <h2>Diseño</h2>
+      <p>Las zanjas de carreteras también se usan para instalar tuberías o cables, para drenar agua y para crear canales de desagüe a los lados de las carreteras, de forma que el agua corra cuando llueva.</p>
+    </div>
+  </div>
+
+  <div id="caracteristicas-zanja-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="caracteristicas-zanja-modal">&times;</span>
+      <h2>Características</h2>
+      <ul>
+        <li>Anchura mínima: la anchura mínima de una zanja depende del propósito para el cual se está utilizando.</li>
+        <li>Calidad del fondo: debe ser adecuada para soportar el peso del material que se va a colocar en ella.</li>
+        <li>Estabilidad de las paredes: las paredes tienen que ser estables y no deben colapsar durante el proceso de excavación.</li>
+      </ul>
+      <img src="img/Drenaje Longitudinal/Zanja/Caracteristicas.jpg" alt="Imagen Características" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 20px;">
+    </div>
+  </div>
+
+  <div id="ubicacion-zanja-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="ubicacion-zanja-modal">&times;</span>
+      <h2>Ubicación</h2>
+      <p>Carretera: Carretera Estatal No. 431 Parque Tecnológico San Fandila</p>
+      <p>Municipio: 76703 Pedro Escobedo, Querétaro</p>
+      <p>Calle: Tulipanes</p>
+      <p>Coordenadas: 20.49307027802866° N, -100.20998253304568° W</p>
+      <div class="collage">
+        <img src="img/Drenaje Longitudinal/Zanja/Ubicacion1.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Zanja/Ubicacion2.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Zanja/Ubicacion3.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Zanja/Ubicacion4.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div id="bordillo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="bordillo-modal">&times;</span>
+      <h2 class="modal-title">BORDILLO</h2>
+      <p>El bordillo de la carretera es un elemento clave en la construcción de carreteras y autopistas. A partir del material de este artículo, aprenderá qué es, qué es y para qué se utiliza. Además, le informaremos sobre sus parámetros y consideraremos los puntos clave de instalación.</p>
+      <img src="img/Drenaje Longitudinal/Bordillo/Bordillo.jpg" alt="Imagen de Bordillo" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 20px auto;">
+      <div class="cards-container">
+        <div class="card" id="caracteristicas-bordillo-card">
+          <h3>Características</h3>
+        </div>
+        <div class="card" id="calculos-bordillo-card">
+          <h3>Cálculos</h3>
+        </div>
+        <div class="card" id="ubicacion-bordillo-card">
+          <h3>Ubicación</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="definicion-bordillo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="definicion-bordillo-modal">&times;</span>
+      <h2>Definición</h2>
+      <p>El bordillo de la carretera es un elemento clave en la construcción de carreteras y autopistas. A partir del material de este artículo, aprenderá qué es, qué es y para qué se utiliza. Además, le informaremos sobre sus parámetros y consideraremos los puntos clave de instalación.</p>
+    </div>
+  </div>
+
+  <div id="caracteristicas-bordillo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="caracteristicas-bordillo-modal">&times;</span>
+      <h2>Características</h2>
+      <ul>
+        <li>Tronco gris: Tiene un bisel en un lado, que se encuentra en la calzada.</li>
+        <li>Borde gris radial: Utilizado en los centros de intersecciones redondas, destinado a encerrar secciones redondeadas.</li>
+        <li>Hecha: Caracterizado por un tipo de superficie porosa, con un bisel en la parte superior. Es una cadena de bordillos del mismo tamaño y forma.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="calculos-bordillo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="calculos-bordillo-modal">&times;</span>
+      <h2>Cálculos</h2>
+      <p>Los bordillos se construyen en los terraplenes mayores de 1.5 m de altura. Se emplazan en el lado exterior de la plataforma y generalmente tienen una sección trapezoidal con base inferior de 0.2 m, base superior de 0.15 m y altura de 0.40 m, sobresaliendo de la superficie de rodadura 0.15 m (Fig. 120). Son usualmente de concreto, reforzados con varillas de construcción de 3/8" de diámetro, espaciados cada 0.20 m en forma de malla simple.</p>
+      <p>En los tramos en tangente, debe dejarse un espacio libre para la descarga del escurrimiento hacia aliviaderos ubicados a una distancia de 50 a 100 m.</p>
++      <img src="img/Drenaje Longitudinal/Bordillo/Calculos.jpg" alt="Imagen Cálculos" style="width:100%; max-width:500px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 20px auto;">
+    </div>
+  </div>
+
+  <div id="ubicacion-bordillo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="ubicacion-bordillo-modal">&times;</span>
+      <h2>Ubicación</h2>
+      <p>Ubicación:</p>
+      <p>Carretera: Carretera EC Cristóbal de Hidalgo.</p>
+      <p>Municipio: 93900 Yecuatla,Ver, México.</p>
+      <p>Calle: Ejido 24 de Marzo.</p>
+      <p>Coordenadas: 19.85724° N, 96.77088° O</p>
+      <div class="collage">
+        <img src="img/Drenaje Longitudinal/Bordillo/Ubicacion1.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Bordillo/Ubicacion2.jpg" alt="">
+        <img src="img/Drenaje Longitudinal/Bordillo/Ubicacion3.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 FANA. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/acerca.js"></script>
+  <script>
+    // Modal functionality
+    var modals = document.querySelectorAll('.modal');
+    var cards = document.querySelectorAll('.card');
+    var closes = document.querySelectorAll('.close');
+
+    // Navigation buttons between modals
+    function createNavButtons(prevId, nextId) {
+      var navDiv = document.createElement('div');
+      navDiv.className = 'modal-nav';
+
+      var prevButton = document.createElement('button');
+      prevButton.textContent = 'Anterior';
+      prevButton.onclick = function() {
+        closeAllModals();
+        document.getElementById(prevId).style.display = 'block';
+      };
+
+      var nextButton = document.createElement('button');
+      nextButton.textContent = 'Siguiente';
+      nextButton.onclick = function() {
+        closeAllModals();
+        document.getElementById(nextId).style.display = 'block';
+      };
+
+      navDiv.appendChild(prevButton);
+      navDiv.appendChild(nextButton);
+      return navDiv;
+    }
+
+    function closeAllModals() {
+      modals.forEach(function(modal) {
+        modal.style.display = 'none';
+      });
+    }
+
+    // Append navigation buttons to Cuneta modal subsections
+    var cunetaModal = document.getElementById('cuneta-modal');
+    var calculoModal = document.getElementById('calculo-modal');
+    var disenoModal = document.getElementById('diseno-modal');
+    var ubicacionModal = document.getElementById('ubicacion-modal');
+    var tiposCunetaModal = document.getElementById('tipos-cuneta-modal');
+    var desagueModal = document.getElementById('desague-modal');
+    var revestimientoModal = document.getElementById('revestimiento-modal');
+
+    // Contracuneta modals
+    var contracunetaModal = document.getElementById('contracuneta-modal');
+    var disenoContracunetaModal = document.getElementById('diseno-contracuneta-modal');
+    var ubicacionContracunetaModal = document.getElementById('ubicacion-contracuneta-modal');
+
+    // Zanja modals
+    var zanjaModal = document.getElementById('zanja-modal');
+    var disenoZanjaModal = document.getElementById('diseno-zanja-modal');
+    var caracteristicasZanjaModal = document.getElementById('caracteristicas-zanja-modal');
+    var ubicacionZanjaModal = document.getElementById('ubicacion-zanja-modal');
+
+    // Bordillo modals
+    var bordilloModal = document.getElementById('bordillo-modal');
+    var caracteristicasBordilloModal = document.getElementById('caracteristicas-bordillo-modal');
+    var calculosBordilloModal = document.getElementById('calculos-bordillo-modal');
+    var ubicacionBordilloModal = document.getElementById('ubicacion-bordillo-modal');
+
+    // Clear existing nav if any and add new nav buttons
+    function addNavButtons(modal, prevId, nextId) {
+      var existingNav = modal.querySelector('.modal-nav');
+      if (existingNav) {
+        existingNav.remove();
+      }
+      var nav = createNavButtons(prevId, nextId);
+      modal.querySelector('.modal-content').appendChild(nav);
+    }
+
+    addNavButtons(calculoModal, 'cuneta-modal', 'diseno-modal');
+    addNavButtons(disenoModal, 'calculo-modal', 'ubicacion-modal');
+    addNavButtons(ubicacionModal, 'diseno-modal', 'tipos-cuneta-modal');
+    addNavButtons(tiposCunetaModal, 'ubicacion-modal', 'desague-modal');
+    addNavButtons(desagueModal, 'tipos-cuneta-modal', 'revestimiento-modal');
+    addNavButtons(revestimientoModal, 'desague-modal', 'cuneta-modal');
+
+    // Add nav buttons for Contracuneta modals
+    addNavButtons(disenoContracunetaModal, 'contracuneta-modal', 'ubicacion-contracuneta-modal');
+    addNavButtons(ubicacionContracunetaModal, 'diseno-contracuneta-modal', 'contracuneta-modal');
+
+    // Add nav buttons for Zanja modals
+    addNavButtons(disenoZanjaModal, 'zanja-modal', 'caracteristicas-zanja-modal');
+    addNavButtons(caracteristicasZanjaModal, 'diseno-zanja-modal', 'ubicacion-zanja-modal');
+    addNavButtons(ubicacionZanjaModal, 'caracteristicas-zanja-modal', 'zanja-modal');
+
+    // Add nav buttons for Bordillo modals
+    addNavButtons(caracteristicasBordilloModal, 'bordillo-modal', 'calculos-bordillo-modal');
+    addNavButtons(calculosBordilloModal, 'caracteristicas-bordillo-modal', 'ubicacion-bordillo-modal');
+    addNavButtons(ubicacionBordilloModal, 'calculos-bordillo-modal', 'bordillo-modal');
+
+    cards.forEach(function(card) {
+      card.onclick = function() {
+        var modalId = card.id.replace('-card', '-modal');
+        document.getElementById(modalId).style.display = "block";
+      }
+    });
+
+    closes.forEach(function(close) {
+      close.onclick = function() {
+        var modalId = close.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = "none";
+      }
+    });
+
+    window.onclick = function(event) {
+      modals.forEach(function(modal) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
