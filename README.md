@@ -1,44 +1,42 @@
-# FANA
+<div align="center">
 
-## Descripción
+# FANA · Ingeniería & Carreteras
 
-Proyecto web estático de FANA, una landing page informativa y atractiva para mostrar servicios, proyectos y contacto en el ámbito de la ingeniería vial. El sitio está diseñado para ofrecer una experiencia clara, navegable y visualmente coherente en español.
+**Sitio informativo para una empresa de ingeniería vial.**
 
-## Tecnologías
+[**Ver sitio**](https://zerofuann-fs.github.io/fana/) · Proyecto freelance
 
-- HTML
-- CSS
-- JavaScript
-- Estructura de archivos sencilla y organizada
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-## Características principales
+<img src="docs/img/inicio-laptop.jpg" width="72%" alt="FANA en computadora" />
+<img src="docs/img/inicio-celular.jpg" width="21%" alt="FANA en celular" />
 
-- Página de inicio (`index.html`) con presentación general y carrusel de imágenes.
-- Sección de carreteras (`carreteras.html`) con información técnica.
-- Sección de drenajes longitudinales (`drenajes-longitudinal.html`).
-- Sección de drenajes transversales (`drenajes-transversal.html`).
-- Blog de proyectos (`blog.html`) con contenido informativo.
-- Página de políticas de privacidad (`politicas.html`).
-- Estilos separados por página en `css/`.
-- Lógica y comportamiento separados por página en `js/`.
-- Organización de imágenes en `img/`.
+</div>
 
-## Proceso de desarrollo
+Sitio estático para una empresa dedicada a la planeación, diseño y construcción de carreteras y drenajes. Explica sus servicios con contenido técnico e imágenes.
 
-1. Planificación del contenido y las secciones principales.
-2. Creación de la estructura HTML para cada página.
-3. Diseño de estilos CSS específicos en archivos por página.
-4. Implementación de interacciones y mejora de la experiencia con JavaScript.
-5. Revisión y prueba local del sitio en el navegador.
+> **La empresa ya no opera.** El código se publica con permiso; los datos de contacto se reemplazaron por ejemplos.
 
-## Instrucciones de ejecución
+## Funciones
 
-1. Clona o descarga el repositorio.
-2. Abre el archivo `index.html` en tu navegador web.
-3. Navega entre las páginas usando los enlaces del menú.
+- **Secciones técnicas:** carreteras, drenaje longitudinal y drenaje transversal, con carruseles de imágenes.
+- **Carruseles hechos solo con CSS** (con botones de radio, sin librerías).
+- **Blog** de proyectos y **políticas de privacidad**.
+- Botones directos a WhatsApp y correo; diseño adaptable a celular.
+- Sin frameworks: HTML, CSS y JavaScript puros, con estilos y lógica separados por página.
 
-> Nota: Este es un proyecto estático, por lo que no requiere servidor ni instalación adicional.
+## Capturas
 
-## Visualización
+<img src="docs/img/carreteras-laptop.jpg" width="100%" alt="Sección de carreteras" />
 
-https://zerofuann-fs.github.io/Fana/
+<details>
+<summary><b>Cómo verlo</b></summary>
+
+Es un sitio estático: clona el repositorio y abre `index.html` en el navegador. También está publicado con GitHub Pages.
+</details>
+
+---
+
+© 2026 ZeroFuann · Código publicado como portafolio. La marca FANA pertenece a sus dueños. Ver [LICENSE](LICENSE).
