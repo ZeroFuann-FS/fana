@@ -17,14 +17,14 @@
 
 Sitio estático para una empresa dedicada a la planeación, diseño y construcción de carreteras y drenajes. Explica sus servicios con contenido técnico e imágenes.
 
-> **La empresa ya no opera.** El código se publica con permiso; los datos de contacto se reemplazaron por ejemplos.
+> **La empresa ya no opera.** El sitio sigue en línea como muestra y ya no muestra datos de contacto. El código se publica con permiso.
 
 ## Funciones
 
 - **Secciones técnicas:** carreteras, drenaje longitudinal y drenaje transversal, con carruseles de imágenes.
 - **Carruseles hechos solo con CSS** (con botones de radio, sin librerías).
 - **Blog** de proyectos y **políticas de privacidad**.
-- Botones directos a WhatsApp y correo; diseño adaptable a celular.
+- Diseño adaptable a celular.
 - Sin frameworks: HTML, CSS y JavaScript puros, con estilos y lógica separados por página.
 
 ## Capturas
