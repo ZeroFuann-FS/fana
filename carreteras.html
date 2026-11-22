@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FANA - Carreteras</title>
+  <meta name="description" content="FANA: ingeniería vial, carreteras y drenajes (longitudinal y transversal). Sitio informativo de muestra.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="stylesheet" href="css/carreteras.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -31,8 +33,6 @@
     </nav>
 
     <div class="social">
-      <a href="https://wa.me/520000000000"><i class="fab fa-whatsapp"></i></a>
-      <a href="mailto:contacto@ejemplo.com"><i class="fas fa-envelope"></i></a>
     </div>
   </header>
 
@@ -50,16 +50,16 @@
 
           <ul class="slides">
             <li class="slide">
-              <img src="img/Carrusel1.jpg" alt="Proyecto 1">
+              <img src="img/Carrusel1.jpg" alt="Proyecto 1" loading="lazy">
             </li>
             <li class="slide">
-              <img src="img/Carrusel2.jpg" alt="Proyecto 2">
+              <img src="img/Carrusel2.jpg" alt="Proyecto 2" loading="lazy">
             </li>
             <li class="slide">
-              <img src="img/Carreteras/A_1.jpg" alt="Proyecto 3">
+              <img src="img/Carreteras/A_1.jpg" alt="Proyecto 3" loading="lazy">
             </li>
             <li class="slide">
-              <img src="img/Carreteras/C_2.jpg" alt="Proyecto 4">
+              <img src="img/Carreteras/C_2.jpg" alt="Proyecto 4" loading="lazy">
             </li>
           </ul>
 
@@ -142,6 +142,8 @@
 
   <footer>
     <p>© 2025 FANA. Todos los derechos reservados.</p>
+    <p class="aviso-muestra" style="max-width:640px;margin:10px auto 0;font-size:.85em;opacity:.8">FANA ya no está en operación. Este sitio se conserva como muestra de su trabajo e información técnica.</p>
+    <p style="margin-top:6px;font-size:.8em;opacity:.6">Sitio por <a href="https://zerofuann.vercel.app" style="color:inherit;text-decoration:underline">ZeroFuann</a></p>
   </footer>
 
   <script src="js/acerca.js"></script>
@@ -201,7 +203,7 @@
         let nav = '';
         images.forEach((img, i) => {
           inputs += `<input type="radio" name="modal-slides-${index}" id="modal-slide-${i+1}-${index}" ${i === 0 ? 'checked' : ''}>`;
-          slides += `<li class="slide"><img src="${img}" alt="${alts[i]}"></li>`;
+          slides += `<li class="slide"><img src="${img}" alt="${alts[i]}" loading="lazy"></li>`;
           nav += `<label for="modal-slide-${i+1}-${index}"></label>`;
         });
         serviceModal = document.createElement('div');
